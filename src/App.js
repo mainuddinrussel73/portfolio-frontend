@@ -14,6 +14,7 @@ import ServicesSection from './components/Services';
 import PortfolioSection from './components/Portfolio';
 import Testimonials from './components/Testimonials';
 import Blog from './components/Blog';
+import CoursesSection from './components/Courses';
 import Contact from './components/Contact';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
@@ -40,7 +41,13 @@ const App = () => {
      });
    }, []);
 
-   if (loading) return <p>Loading...</p>;
+   if (loading) 
+    return
+    (  
+      <div className="flex items-center justify-center h-screen bg-gray-100">
+        <div className="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
+      </div>
+    );
    if (error) return <p>{error}</p>;
 
   return (
@@ -53,6 +60,7 @@ const App = () => {
       <ServicesSection specialization={specialization}/>
       <PortfolioSection completedProjects={userData.completedProjects}/>
       <Contact />
+      <CoursesSection userData={userData}/>
       <Testimonials clientReviews={userData.clientReviews} />
       <Blog />
       <ContactSection userData={userData}/>
