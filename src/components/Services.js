@@ -43,7 +43,7 @@ const OfferCard = ({ icon, title, description }) => {
   );
 };
 
-const WhatIOffer = ({specialization}) => {
+const WhatIOffer = ({userData}) => {
  
 
  
@@ -56,7 +56,7 @@ const WhatIOffer = ({specialization}) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
-          {specialization.map((offer, index) => (
+          {userData.specializations.map((offer, index) => (
             <OfferCard
               key={index}
               icon={iconMap[offer.icon]}

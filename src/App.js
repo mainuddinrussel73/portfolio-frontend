@@ -16,13 +16,14 @@ import Testimonials from './components/Testimonials';
 import Blog from './components/Blog';
 import CoursesSection from './components/Courses';
 import Contact from './components/Contact';
+import SocialMediaSection from './components/SocialmediaSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import MoveToTopButton from './components/movetotop'; 
+import Learnedsofar from './components/Learnedsofar'
 
 const App = () => {
   const [userData, setuserData] = useState([]);
-  const [specialization, setSpecialization] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
 
@@ -32,7 +33,6 @@ const App = () => {
      .then(response => {
        console.log(response.data[0]);
        setuserData(response.data[0]);
-       setSpecialization(response.data[0].specializations);
        setLoading(false);
      })
      .catch(error => {
@@ -51,17 +51,19 @@ const App = () => {
    if (error) return <p>{error}</p>;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full">
       <Header />
       <Hero userData={userData}/>
       <About userData={userData}/>
+      <Learnedsofar/>
       <Skills pskills={userData.programmingLanguages}  fskills={userData.frameworkSkills} />
       <Accademic userData={userData} educationBackground={userData.educationBackground} jobExperiences={userData.jobExperiences} />
-      <ServicesSection specialization={specialization}/>
+      <ServicesSection userData={userData}/>
       <PortfolioSection completedProjects={userData.completedProjects}/>
       <Contact />
       <CoursesSection userData={userData}/>
       <Testimonials clientReviews={userData.clientReviews} />
+      <SocialMediaSection/>
       <Blog />
       <ContactSection userData={userData}/>
       <Footer userData={userData} />

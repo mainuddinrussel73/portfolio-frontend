@@ -9,9 +9,9 @@ const Header = () => {
   };
 
   return (  
-    <header className="bg-white shadow-md fixed w-full z-10">
+    <header className="bg-white  fixed w-full z-10">
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="text-2xl font-bold text-blue-600">Portfolio</div>
+        <div className="text-2xl font-bold text-blue-600">Russel's Portfolio</div>
         
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8">
@@ -26,15 +26,24 @@ const Header = () => {
           <li><a href="#mycontact" className="hover:text-blue-600">Contact</a></li>
         </ul>
         
-        {/* Mobile Hamburger Icon */}
+        {/* Mobile Hamburger/Cross Icon */}
         <div className="md:hidden">
-          <button 
-            onClick={toggleMenu} 
-            className="text-blue-600 focus:outline-none"
+          <button
+            onClick={toggleMenu}
+            className="text-gray-600 focus:outline-none"
+            aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
+            {isMenuOpen ? (
+              // Cross Icon
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              // Hamburger Icon
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            )}
           </button>
         </div>
       </nav>

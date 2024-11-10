@@ -3,7 +3,7 @@ import React from 'react';
 const ContactForm = ({userData}) => {
   return (
     <div id='mycontact' className="bg-white min-h-screen flex justify-center items-center py-12">
-      <div className="max-w-5xl w-full mx-auto px-4 lg:px-0">
+      <div className="w-full mx-auto px-4 lg:px-0">
         
         {/* Heading */}
         <div className="text-center mb-10">
@@ -15,7 +15,7 @@ const ContactForm = ({userData}) => {
         <div className="flex flex-col lg:flex-row">
           
           {/* Contact Form */}
-          <div className="space-y-8 w-full md:w-3/5 ">
+          <div className="space-y-8 w-fit md:w-3/5 md:ml-6 ml-0 ">
             <div className="flex space-x-4">
               <input
                 type="text"
@@ -43,7 +43,7 @@ const ContactForm = ({userData}) => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-6 w-full md:w-2/5 ml-10 mt-10 md:mt-0 ">
+          <div className="space-y-6 w-full md:w-2/5 md:ml-10 ml-2  mt-10 md:mt-0 ">
              
             {/* Contact Method 1 - Call Me */}
             <div className="flex items-start space-x-4">
@@ -71,12 +71,12 @@ const ContactForm = ({userData}) => {
 
             {/* Contact Method 3 - Location */}
             <div className="flex items-start space-x-4">
-                <div className="bg-blue-500 text-white w-20 h-10 flex items-center justify-center rounded-full">
+                <div className="bg-blue-500 text-white md:w-16 w-20 h-10 flex items-center justify-center rounded-full">
                 <i className="fas fa-map-marker-alt"></i>
                 </div>
                 <div>
                 <p className="text-gray-800 font-semibold">Location</p>
-                <p className="text-gray-600">{userData.address}</p>
+                <p className="text-gray-600 w-fit  ">{userData.address}</p>
                 </div>
             </div>
           </div>

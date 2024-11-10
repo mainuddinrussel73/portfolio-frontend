@@ -13,7 +13,7 @@ const SkillBar = ({ skill, percentage }) => (
     <span className="w-1/2 flex items-center">
       <div className="w-full bg-gray-100 h-2 rounded-lg mr-2 overflow-hidden">
         <div
-          className="bg-blue-500 h-full"
+          className="bg-indigo-600 h-full"
           style={{ width: `${percentage}%` }}
         ></div>
       </div>

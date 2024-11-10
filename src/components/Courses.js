@@ -24,9 +24,9 @@ var CourseCard = ({ title, organization, completionDate,coursetopics, descriptio
     return (
         <div className="bg-gray-200 text-black rounded-lg p-6 m-4 ">
         <img
-          src={imageUrl}
+          src={course1}
           alt={`${title} cover`}
-          className="w-full h-40 object-cover rounded-lg mb-4 shadow-md"
+          className="w-full h-40 object-cover rounded-lg mb-4 "
         />
         <h3 className="text-2xl  text-gray-800 font-semibold mb-1">{title}</h3>
         <p className="text-sm font-medium text-gray-800 opacity-90 mb-2">{organization} • {new Date(completionDate).toLocaleDateString()}</p>
