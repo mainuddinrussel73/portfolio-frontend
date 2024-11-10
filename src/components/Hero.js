@@ -27,11 +27,11 @@ const Hero = ({userData}) => {
       </div>
 
       {/* Right Side - Profile Image */}
-      <div className="flex-1 mt-8 md:mt-0 md:mr-40 flex justify-center">
+      <div className="flex-1 mt-8 md:-mt-10 md:mr-40 flex justify-center">
         <img
           src={propic}
           alt="Stev Homlez"
-          className=" w-40 h-auto md:w-48 md:h-auto"
+          className=" w-40 h-auto md:w-60 md:h-auto"
         />
       </div>
     </div>
